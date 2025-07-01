@@ -1,0 +1,9 @@
+A Crossword with that only contains slurs, swears and awful actions 
+
+Crossword needs:
+- 21 x 21 grid (Sunday crossword size, theses are harder and follow a theme)
+- 7 x 7 (Normal grid) - usually contains 22 words (entires) (49 squares)
+
+How to generate the grid?
+
+1. Pick words to fit out the top lines width

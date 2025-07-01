@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bad Crossword</title>
+        <script src="script.js", defer></script>
+        <style>
+            :root{
+                --grid-cols: 1;
+                --grid-rows: 1;
+            }
+
+            #Container {
+                display:grid;
+                grid-template-columns: repeat(var(--grid-cols),auto);
+                justify-content: start;
+            }
+
+            .grid-item {
+                width: 20px;
+                height: 20px;
+                border:solid;
+                border-width: 1px;
+                border-color: black;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <p style="text-align: left;">WB 2025</p>
+        <div id="Container"></div>
+    </body>
+</html>
