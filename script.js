@@ -285,12 +285,23 @@ function verticalFill(grid,size){
             var dummy;
             for(let x = 0; x < size - selectedEntrie.length + 1; x++){
                 var placeholder = []
+                var allowed = true;
                 dummy = x * size
                 count = 0;
                 for(let y = 0; y < selectedEntrie.length; y++){
                     placeholder.push(grid[dummy].innerText)
-                    //If its the first letter in the word, check the above square is empty
-                    if(grid[dummy].innerText == "" && grid[dummy].backgroundColor != "black"){
+                    //If its the last letter in the word, check if the next square is empty, or its the last square of the row.
+                    if(y == selectedEntrie.length){
+                        if(grid[dummy+size] > (size * size) || grid[dummy+size].innerText == ""){
+                            null;
+                            allowed = true
+                            //here
+                        }
+                        else{
+                            allowed = false
+                        }
+                    }
+                    if(grid[dummy].innerText == "" && grid[dummy].backgroundColor != "black" && allowed == true){
                         if(y == 0){
                             if(grid[dummy - size].innerText == ""){
                                 count+=1
@@ -301,7 +312,7 @@ function verticalFill(grid,size){
                         }
                     }
                     else{
-                        if(grid[dummy].innerText == selectedEntrie[y]){
+                        if(grid[dummy].innerText == selectedEntrie[y] && allowed == true){
                             count+=1;
                         }
                     }
